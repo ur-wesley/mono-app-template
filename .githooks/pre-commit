@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# Pre-commit hook that runs Biome checks
+# To install: cp .githooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+echo "Running Biome checks..."
+
+# Run Biome check on staged files
+bun run ci
+
+if [ $? -ne 0 ]; then
+  echo "❌ Biome checks failed. Run 'bun run check:fix' to fix issues automatically."
+  exit 1
+fi
+
+echo "✅ All Biome checks passed!"
+exit 0
