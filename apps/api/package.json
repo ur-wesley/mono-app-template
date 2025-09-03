@@ -1,37 +1,40 @@
 {
-  "name": "@mono/api",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "bun --watch src/index.ts",
-    "start": "bun src/index.ts",
-    "build": "echo 'Bun/Elysia server doesn't need build'",
-    "test": "bun test",
-    "test:watch": "bun test --watch"
-  },
-  "dependencies": {
-    "@elysiajs/cors": "^1.3.3",
-    "@elysiajs/eden": "^1.3.3",
-    "@elysiajs/openapi": "^1.3.7",
-    "@mono/shared": "workspace:*",
-    "c12": "^3.2.0",
-    "consola": "^3.4.2",
-    "elysia": "^1.3.21",
-    "neverthrow": "^7.2.0",
-    "zod": "^3.25.76"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/node": "^24.3.0",
-    "bun-types": "^1.2.21",
-    "typescript": "^5.9.2"
-  },
-  "engines": {
-    "bun": ">=1.20.0"
-  },
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "module": "src/index.ts"
+	"name": "@mono/api",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"start": "bun src/index.ts",
+		"build": "echo 'Bun/Elysia server doesn't need build'",
+		"lint": "biome check ./src --fix",
+		"format": "biome format ./src --write",
+		"test": "bun test",
+		"test:watch": "bun test --watch"
+	},
+	"dependencies": {
+		"@elysiajs/cors": "^1.3.3",
+		"@elysiajs/eden": "^1.3.3",
+		"@elysiajs/openapi": "^1.3.7",
+		"@mono/shared": "workspace:*",
+		"c12": "^3.2.0",
+		"consola": "^3.4.2",
+		"elysia": "^1.3.21",
+		"neverthrow": "^8.2.0",
+		"zod": "^4.1.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
+		"@types/bun": "latest",
+		"@types/node": "^24.3.0",
+		"bun-types": "^1.2.21",
+		"typescript": "^5.9.2"
+	},
+	"engines": {
+		"bun": ">=1.20.0"
+	},
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"module": "src/index.ts"
 }

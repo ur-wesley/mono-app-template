@@ -1,27 +1,35 @@
 {
-  "name": "mono-template",
-  "private": true,
-  "version": "0.0.0",
-  "description": "A monorepo template with Turborepo, web (Solid + Vite + UnoCSS) and api (Bun + Elysia).",
-  "packageManager": "bun@1.2.21",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "turbo run format",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch",
-    "web": "bun --cwd apps/web dev",
-    "api": "bun --cwd apps/api dev"
-  },
-  "devDependencies": {
-    "turbo": "^2.5.6"
-  },
-  "dependencies": {
-    "consola": "^3.4.2"
-  }
+	"name": "mono-template",
+	"private": true,
+	"version": "0.0.0",
+	"description": "A monorepo template with Turborepo, web (Solid + Vite + UnoCSS) and api (Bun + Elysia).",
+	"packageManager": "bun@1.2.21",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev --parallel",
+		"lint": "turbo run lint",
+		"lint:check": "biome lint .",
+		"lint:fix": "biome lint . --fix",
+		"format": "turbo run format",
+		"format:check": "biome format .",
+		"format:fix": "biome format . --write",
+		"check": "biome check .",
+		"check:fix": "biome check . --fix",
+		"ci": "biome ci .",
+		"test": "turbo run test",
+		"test:watch": "turbo run test:watch",
+		"web": "bun --cwd apps/web dev",
+		"api": "bun --cwd apps/api dev"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
+		"turbo": "^2.5.6"
+	},
+	"dependencies": {
+		"consola": "^3.4.2"
+	}
 }
