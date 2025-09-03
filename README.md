@@ -54,6 +54,12 @@ bun run dev
 | **TypeScript** | Shared types and utilities           |
 | **Config**     | Centralized configuration management |
 
+### Code Quality
+
+| Technology | Description                                            |
+| ---------- | ------------------------------------------------------ |
+| **Biome**  | Fast formatter, linter, and import organizer for TS/JS |
+
 ## Project Structure
 
 ```
@@ -71,40 +77,67 @@ bun run dev
 
 ### Root Level
 
-| Script       | Description                        |
-| ------------ | ---------------------------------- |
-| `dev`        | Start all apps in development mode |
-| `build`      | Build all apps for production      |
-| `lint`       | Run linting across all packages    |
-| `format`     | Format code across all packages    |
-| `test`       | Run tests across all packages      |
-| `test:watch` | Run tests in watch mode            |
-| `web`        | Start only the web app             |
-| `api`        | Start only the API server          |
+| Script       | Description                                   |
+| ------------ | --------------------------------------------- |
+| `dev`        | Start all apps in development mode            |
+| `build`      | Build all apps for production                 |
+| `lint`       | Run linting across all packages               |
+| `format`     | Format code across all packages               |
+| `check`      | Run Biome checks (lint + format)              |
+| `check:fix`  | Run Biome checks and fix issues automatically |
+| `ci`         | Run Biome in CI mode (fails on any issues)    |
+| `test`       | Run tests across all packages                 |
+| `test:watch` | Run tests in watch mode                       |
+| `web`        | Start only the web app                        |
+| `api`        | Start only the API server                     |
 
 ### Web App (`apps/web`)
 
-| Script  | Description                          |
-| ------- | ------------------------------------ |
-| `dev`   | Start development server (port 5000) |
-| `build` | Build for production                 |
-| `serve` | Preview production build             |
-| `test`  | Run web app tests                    |
-| `add`   | Add shadcn-solid components          |
+| Script   | Description                          |
+| -------- | ------------------------------------ |
+| `dev`    | Start development server (port 5000) |
+| `build`  | Build for production                 |
+| `serve`  | Preview production build             |
+| `lint`   | Run Biome linting and fix issues     |
+| `format` | Run Biome formatting                 |
+| `test`   | Run web app tests                    |
+| `add`    | Add shadcn-solid components          |
 
 ### API Server (`apps/api`)
 
-| Script  | Description                          |
-| ------- | ------------------------------------ |
-| `dev`   | Start development server (port 5005) |
-| `start` | Start production server              |
-| `test`  | Run API tests                        |
+| Script   | Description                          |
+| -------- | ------------------------------------ |
+| `dev`    | Start development server (port 5005) |
+| `start`  | Start production server              |
+| `lint`   | Run Biome linting and fix issues     |
+| `format` | Run Biome formatting                 |
+| `test`   | Run API tests                        |
+| `test`   | Run API tests                        |
 
 ## Development
 
 1. **Install dependencies**: `bun install`
 2. **Start development**: `bun run dev`
 3. **Run tests**: `bun run test`
+4. **Check code quality**: `bun run check`
+
+### Code Quality
+
+The project uses [Biome](https://biomejs.dev/) for fast linting, formatting, and import organization:
+
+- **Format code**: `bun run format:fix`
+- **Lint code**: `bun run lint:fix`
+- **Check everything**: `bun run check:fix`
+- **CI checks**: `bun run ci` (fails on any issues)
+
+### Pre-commit Hooks
+
+To automatically run Biome checks before commits:
+
+```bash
+cp .githooks/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
 
 ### URLs
 
@@ -141,7 +174,7 @@ WEB_API_URL=http://localhost:5005
 - ✅ **Modern UI** - Solid.js with UnoCSS and shadcn components
 - ✅ **API Documentation** - Automatic OpenAPI docs with Scalar
 - ✅ **Testing Setup** - Comprehensive test suites for both apps
-- ✅ **Development Tools** - ESLint, Prettier, and more
+- ✅ **Code Quality** - Biome for fast linting, formatting, and import organization
 - ✅ **Template System** - Easy project scaffolding
 
 ## Template Usage
