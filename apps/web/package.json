@@ -1,0 +1,53 @@
+{
+  "name": "mono-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "biome check ./src --fix",
+    "format": "biome format ./src --fix",
+    "add": "bunx shadcn-solid@latest add",
+    "deps": "bunx taze",
+    "bump": "bunx bumpp",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@solidjs/testing-library": "^0.8.10",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@types/node": "^24.3.0",
+    "@unocss/preset-icons": "^66.5.0",
+    "@unocss/preset-typography": "^66.5.0",
+    "@unocss/vite": "^66.5.0",
+    "bumpp": "^10.2.3",
+    "elysia": "^1.3.21",
+    "happy-dom": "^18.0.1",
+    "taze": "^19.4.0",
+    "typescript": "^5.9.2",
+    "unocss": "^66.5.0",
+    "vite": "^6.3.5",
+    "vite-plugin-solid": "^2.11.8"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "^1.0.26",
+    "@mono/shared": "workspace:*",
+    "@tanstack/solid-query": "^5.62.7",
+    "@tanstack/solid-router": "^1.131.32",
+    "c12": "^3.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "solid-js": "^1.9.9",
+    "tailwind-merge": "^3.3.1",
+    "unocss-preset-animations": "^1.2.1"
+  },
+  "engines": {
+    "bun": ">=1.20.0"
+  }
+}

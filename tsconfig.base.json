@@ -1,0 +1,18 @@
+{
+ "compilerOptions": {
+  "target": "ESNext",
+  "module": "ESNext",
+  "moduleResolution": "Bundler",
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true,
+  "strict": true,
+  "skipLibCheck": true,
+  "baseUrl": ".",
+  "paths": {
+   "@mono/api": ["apps/api/src/index.ts"],
+   "@mono/api/*": ["apps/api/src/*"],
+   "@mono/shared": ["packages/shared/src/index.ts"],
+   "@mono/shared/*": ["packages/shared/src/*"]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "ignore": [
+    "node_modules/**",
+    ".git/**",
+    "dist/**",
+    ".turbo/**"
+  ],
+  "setup": "bun setup.ts {{name}} && rm setup.ts",
+  "prompts": {
+    "name": {
+      "type": "text",
+      "message": "What is the name of your project?",
+      "placeholder": "my-awesome-app",
+      "validate": "^[a-z][a-z0-9-]*$"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp.*
+
+# Bun
+.bun/
+bun.lockb
+
+# TypeScript
+*.tsbuildinfo
+
+# Build outputs
+dist/
+build/
+out/
+apps/*/dist/
+apps/*/build/
+
+# Turbo cache and logs
+.turbo/
+apps/*/.turbo/
+
+# Vite/Tooling caches
+.vite/
+.cache/
+.temp/
+
+# Coverage
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Env files (keep examples)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp

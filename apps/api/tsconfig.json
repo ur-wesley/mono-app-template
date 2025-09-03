@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+  "isolatedModules": true,
+  "types": ["bun-types", "node"],
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@api/*": ["./src/*"],
+      "*": ["./src/*", "./node_modules/*"]
+    }
+  },
+  "include": ["src"]
+}
