@@ -7,7 +7,7 @@
  * Run: bun setup.ts your-project-name
  */
 
-import { readdir, readFile, writeFile, stat } from "node:fs/promises";
+import { readdir, readFile, writeFile, stat, unlink } from "node:fs/promises";
 import { join } from "node:path";
 import { consola } from "consola";
 
@@ -106,10 +106,25 @@ async function main() {
    "1. bun install",
    "2. bun run dev",
    `3. Start building your ${newName} application!`,
-   "",
-   "💡 You can now delete setup.ts",
   ].join("\n"),
  });
+
+ // Ask if user wants to delete the setup script
+ const shouldDelete = await consola.prompt("Delete setup.ts file?", {
+  type: "confirm",
+  initial: true,
+ });
+
+ if (shouldDelete) {
+  try {
+   await unlink("setup.ts");
+   consola.success("setup.ts has been deleted!");
+  } catch (error) {
+   consola.error("Failed to delete setup.ts:", error);
+  }
+ } else {
+  consola.info("💡 You can manually delete setup.ts when you're ready");
+ }
 }
 
 main().catch(console.error);
