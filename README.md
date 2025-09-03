@@ -144,10 +144,6 @@ WEB_API_URL=http://localhost:5005
 - ✅ **Development Tools** - ESLint, Prettier, and more
 - ✅ **Template System** - Easy project scaffolding
 
-## Testing
-
-See [TESTING.md](TESTING.md) for detailed testing documentation.
-
 ## Template Usage
 
 This template includes a setup script that will rename all instances of "mono" to your project name:
