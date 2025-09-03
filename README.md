@@ -10,6 +10,8 @@ You can quickly scaffold a new project using [giget](https://github.com/unjs/gig
 bunx giget@latest gh:ur-wesley/mono-app-template <project-directory>
 cd <project-directory>
 bun install
+bun setup.ts <project-name>  # Optional: rename from "mono" namespace
+bun run dev
 ```
 
 Or use degit:
@@ -18,6 +20,8 @@ Or use degit:
 bunx degit ur-wesley/mono-app-template <project-directory>
 cd <project-directory>
 bun install
+bun setup.ts <project-name>  # Optional: rename from "mono" namespace
+bun run dev
 ```
 
 ## Stack
