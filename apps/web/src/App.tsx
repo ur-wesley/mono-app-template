@@ -1,6 +1,6 @@
-import { useEchoMutation, useHelloQuery } from "@/libs/queries";
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
+import { useEchoMutation, useHelloQuery } from "@/libs/queries";
 
 const App: Component = () => {
 	const [name, setName] = createSignal("Solid");
@@ -42,7 +42,7 @@ const App: Component = () => {
 				>
 					Echo
 				</button>
-				<span class="opacity-70">{echo.isPending ? "sending..." : (echo.data?.received.text ?? "")}</span>
+				<span class="opacity-70">{echo.isPending ? "sending..." : (echo.data?.received ?? "")}</span>
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/solid-query";
-import { Outlet, RouterProvider, createRootRoute, createRoute, createRouter } from "@tanstack/solid-router";
+import { createRootRoute, createRoute, createRouter, Outlet, RouterProvider } from "@tanstack/solid-router";
 import { render } from "solid-js/web";
 
 import About from "@/pages/About";

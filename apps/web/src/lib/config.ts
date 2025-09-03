@@ -1,11 +1,10 @@
 import type { AppConfig } from "@mono/shared/types";
-import { loadConfig } from "c12";
 
-export const config = await loadConfig<AppConfig>({
-	name: "config",
-	configFile: "config.ts",
-	cwd: "../../..",
-	defaults: {
+// Browser-compatible configuration
+// In production, these would typically come from environment variables
+// injected at build time via Vite's define or import.meta.env
+export const config: { config: AppConfig } = {
+	config: {
 		api: {
 			port: 5005,
 			host: "localhost",
@@ -17,7 +16,7 @@ export const config = await loadConfig<AppConfig>({
 		},
 		web: {
 			port: 5000,
-			apiUrl: "http://localhost:5005",
+			apiUrl: import.meta.env.VITE_API_URL || "http://localhost:5005",
 		},
 	},
-});
+};
